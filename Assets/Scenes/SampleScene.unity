@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 1021758443}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1305,7 +1305,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4031619653288768660, guid: c441f7f4e2b74384a9e2fbee99ba7f35, type: 3}
+  m_Sprite: {fileID: -6603193462306882315, guid: c441f7f4e2b74384a9e2fbee99ba7f35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26440f5123c27d4180ff65347e68ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
 --- !u!95 &2115730141
 Animator:
   serializedVersion: 7
