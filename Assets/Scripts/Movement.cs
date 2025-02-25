@@ -53,7 +53,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Ground" || collision.gameObject.tag=="Bounce" || collision.gameObject.tag=="Bounce2")
+        if(collision.gameObject.tag=="Ground" || collision.gameObject.tag=="Bounce")
             Grounded = true;
         if(collision.gameObject.tag=="Walls"){
             Walled = true;
