@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     private Animator anim;
     private bool Grounded;
     private int Jumps;
+    private bool Walled;
 
     private void Awake()
     {
@@ -24,18 +25,21 @@ public class Movement : MonoBehaviour
             transform.localScale = new Vector3(5,5,1);
         else if ((HoriInput < -0.01f))
             transform.localScale = new Vector3(-5,5,1);
+
+        
         
         if(Grounded && Jumps<2) {
             Jumps = 2;
         }
     
-        if(Input.GetKeyDown(KeyCode.Space) && Jumps > 0) {
+        if(Input.GetKeyDown(KeyCode.Space) && Jumps > 0 && !Walled) {
             Jump();
                
             Debug.Log(Jumps);
         }
+        Debug.Log(Walled);
            
-
+        Walled = false;
         Debug.Log(Jumps);
         anim.SetBool("Walk", HoriInput != 0);
         anim.SetBool("Grounded", Grounded);
@@ -49,7 +53,13 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Ground")
+        if(collision.gameObject.tag=="Ground" || collision.gameObject.tag=="Bounce")
             Grounded = true;
-    }
+        if(collision.gameObject.tag=="Walls"){
+            Walled = true;
+        }
+        if(collision.gameObject.tag=="Bounce"){
+            body.linearVelocity = new Vector2(0, 50);
+        }
+    }     
 }
