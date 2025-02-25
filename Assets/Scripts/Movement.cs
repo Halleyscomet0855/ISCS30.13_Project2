@@ -53,13 +53,16 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Ground" || collision.gameObject.tag=="Bounce")
+        if(collision.gameObject.tag=="Ground" || collision.gameObject.tag=="Bounce" || collision.gameObject.tag=="Bounce2")
             Grounded = true;
         if(collision.gameObject.tag=="Walls"){
             Walled = true;
         }
         if(collision.gameObject.tag=="Bounce"){
             body.linearVelocity = new Vector2(0, 50);
+        }
+        if(collision.gameObject.tag=="Bounce2"){
+            body.linearVelocity = new Vector2(0, speed/2);
         }
     }     
 }
