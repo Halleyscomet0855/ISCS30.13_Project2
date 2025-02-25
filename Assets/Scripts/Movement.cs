@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour
             body.linearVelocity = new Vector2(0, 50);
         }
         if(collision.gameObject.tag=="Bounce2"){
-            body.linearVelocity = new Vector2(0, speed/2);
+            body.linearVelocity = new Vector2(0, speed*0.75f);
         }
     }     
 }
