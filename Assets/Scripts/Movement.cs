@@ -36,6 +36,7 @@ public class Movement : MonoBehaviour
             Jump();
                
             Debug.Log(Jumps);
+            
         }
         Debug.Log(Walled);
            
@@ -46,6 +47,7 @@ public class Movement : MonoBehaviour
     }
     private void Jump()
     {
+        
         body.linearVelocity = new Vector2(body.linearVelocity.x, speed);
         Grounded = false;
         Jumps = Jumps - 1;
@@ -56,6 +58,7 @@ public class Movement : MonoBehaviour
         if(collision.gameObject.tag=="Ground" || collision.gameObject.tag=="Bounce")
             Grounded = true;
         if(collision.gameObject.tag=="Walls"){
+            body.linearVelocity = new Vector2(0, 0);
             Walled = true;
         }
         if(collision.gameObject.tag=="Bounce"){
